@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TodoInputTextVue />
+    <TodoInputTextVue v-on:todos="todos" />
   </div>
 </template>
 
@@ -9,6 +9,11 @@ import TodoInputTextVue from "@/components/TodoInputText.vue";
 export default {
   components: {
     TodoInputTextVue
+  },
+  data() {
+    return {
+      todos: ["Afa", "Doflex", "Stories"]
+    };
   }
 };
 </script>
