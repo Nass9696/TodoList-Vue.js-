@@ -1,9 +1,16 @@
 <template>
-  <h2>zaiohjdliz</h2>
+  <div>
+    <TodoInputTextVue />
+  </div>
 </template>
 
 <script>
-export default {};
+import TodoInputTextVue from "@/components/TodoInputText.vue";
+export default {
+  components: {
+    TodoInputTextVue
+  }
+};
 </script>
 
 <style>
