@@ -1,9 +1,18 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <TodoList />
+  </div>
 </template>
 
 <script>
-export default {};
+import TodoList from "@/components/TodoList.vue";
+
+export default {
+  name: "app",
+  components: {
+    TodoList
+  }
+};
 </script>
 
 <style lang="scss">
