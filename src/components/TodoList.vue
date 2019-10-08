@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TodoInputTextVue @keydown.enter="addToDo" />
+    <TodoInputTextVue v-model="newTodoText" @keydown.enter="addToDo" />
     <TodoListItem v-bind:todos="todos" />
   </div>
 </template>
@@ -8,6 +8,7 @@
 <script>
 import TodoInputTextVue from "@/components/TodoInputText.vue";
 import TodoListItem from "@/components/TodoListItem.vue";
+
 export default {
   components: {
     TodoInputTextVue,
@@ -15,12 +16,17 @@ export default {
   },
   data() {
     return {
+      newTodoText: "",
       todos: ["Try", "Test", "Stories"]
     };
   },
   methods: {
     addToDo() {
-      alert("test");
+      const trimmedText = this.newTodoText.trim();
+      if (trimmedText) {
+        this.todos.push(trimmedText);
+        this.newTodoText = "";
+      }
     }
   }
 };
