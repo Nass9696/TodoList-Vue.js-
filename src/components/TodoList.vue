@@ -1,19 +1,27 @@
 <template>
   <div>
-    <TodoInputTextVue v-on:todos="todos" />
+    <TodoInputTextVue @keydown.enter="addToDo" />
+    <TodoListItem v-bind:todos="todos" />
   </div>
 </template>
 
 <script>
 import TodoInputTextVue from "@/components/TodoInputText.vue";
+import TodoListItem from "@/components/TodoListItem.vue";
 export default {
   components: {
-    TodoInputTextVue
+    TodoInputTextVue,
+    TodoListItem
   },
   data() {
     return {
-      todos: ["Afa", "Doflex", "Stories"]
+      todos: ["Try", "Test", "Stories"]
     };
+  },
+  methods: {
+    addToDo() {
+      alert("test");
+    }
   }
 };
 </script>
