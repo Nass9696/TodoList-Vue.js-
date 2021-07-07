@@ -1,18 +1,23 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
+    <h1 class="title">TodoList crée avec Vue.js</h1>
+    <TodoList />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TodoList from "@/components/TodoList.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    TodoList
   }
-}
+};
 </script>
 
 <style lang="scss">
+.container {
+  margin: 100px 60px 0 100px;
+}
 </style>
